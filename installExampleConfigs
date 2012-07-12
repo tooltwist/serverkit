@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+#	Deploy the config files from site-conf-example
+#
+#	BEWARE: This DOES NOT take backups.
+#
+
+MAIN_PROJECT=ttc
+
+
+dir=`dirname $0`
+echo dir=${dir}
+
+
+mkdir -p ${dir}/../server/tomcat/webapps/ttsvr/META-INF
+mkdir -p ${dir}/../server/webdesign-projects/${MAIN_PROJECT}/widgets
+mkdir -p ${dir}/../server/extension-projects/webdesign/config/wbd
+mkdir -p ${dir}/../server/tomcat/logs
+mkdir -p ${dir}/../server/tomcat/temp
+mkdir -p ${dir}/../server/site-conf
+
+cp ${dir}/../server/site-conf-example/server.xml	${dir}/../server/tomcat/conf/server.xml
+cp ${dir}/../server/site-conf-example/tomcat-users.xml	${dir}/../server/tomcat/conf/tomcat-users.xml
+cp ${dir}/../server/site-conf-example/tooltwist.conf	${dir}/../server/tooltwist.conf
+cp ${dir}/../server/site-conf-example/web.xml		${dir}/../server/tomcat/webapps/ttsvr/WEB-INF/web.xml
+cp ${dir}/../server/site-conf-example/wbd.conf		${dir}/../server/extension-projects/webdesign/config/wbd/wbd.conf
+
+echo done
+exit 0
