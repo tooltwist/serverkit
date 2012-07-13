@@ -5,23 +5,27 @@
 # Java environment variables
 export JAVA_OPTS="-Xms256m -Xmx2g -XX:MaxPermSize=256m -XX:MaxPermSize=512m"
 
+#Paths
+SERVER=${HOME}/server
+CONTROLLER_BIN=${SERVER}/extension-projects/ttc/config/bin
+
 
 # Commands for controlling the server
 
 function start {
-        (cd ~/tomcat/bin; ./startup.sh)
+        (cd ${SERVER}/tomcat/bin; ./startup.sh)
 }
 
 function stop {
-        (cd ~/tomcat/bin; ./shutdown.sh)
+        (cd ${SERVER}/tomcat/bin; ./shutdown.sh)
 }
 
 function log {
-        tail -f ~/tomcat/logs/catalina.out
+        tail -f ${SERVER}/tomcat/logs/catalina.out
 }
 
 function runJenkins {
-	~/ttc-project/config/bin/runJenkins
+	${CONTROLLER_BIN}/runJenkins
 }
 
 
@@ -35,21 +39,5 @@ function l { ls -l "$@"; }
 function lr { ls -ltr "$@"; }
 function la { ls -la "$@"; }
 function j { jobs -l "$@"; }
-function launchControl { ~/ttc-project/config/bin/checkLaunchpad.sh "$@"; }
-function lc { ~/ttc-project/config/bin/checkLaunchpad.sh "$@" controllerTest; }
+function launchControl { ${CONTROLLER_BIN}/checkLaunchpad.sh "$@"; }
 
-
-function startC { (cd ~/tomcat/bin; ./startup.sh); }
-function stopC { (cd ~/tomcat/bin; ./shutdown.sh); }
-function logC { tail -f ~/tomcat/logs/catalina.out; }
-function cdC { cd ~/tomcat; }
-
-function startB { ~/ttc-project/config/bin/checkLaunchpad.sh startup controllerTest; } 
-function stopB { ~/ttc-project/config/bin/checkLaunchpad.sh shutdown controllerTest; } 
-function logB { ~/ttc-project/config/bin/checkLaunchpad.sh log controllerTest; } 
-function cdB { cd ~/launchpads/controllerTest/image; } 
-
-function startA { (cd ~/slot1/server/tomcat/bin/; ./startup.sh); } 
-function stopA { (cd ~/slot1/server/tomcat/bin/; ./shutdown.sh); } 
-function logA { tail -f ~/slot1/server/tomcat/logs/catalina.out; } 
-function cdA { cd ~/slot1/server; } 
