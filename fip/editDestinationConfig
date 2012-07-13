@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+#	Set up a directory so it may be used as a souce for FIP
+#
+path=$1
+if [ -z ${path} ] ; then
+	echo usage: $0 destinationDirectory
+	exit 1
+fi
+
+if [ ! -d ${path} ] ; then
+	echo Error: Not a directory: ${path}
+	exit 1
+fi
+
+# Check it's not already a destination
+cfg=${path}/.fip-destination
+if [ -e ${cfg} ] ; then
+	vi ${cfg}
+	exit 0
+else
+	echo "Could not find ${cfg}"
+	echo "Perhaps you need to use the 'newDestination' command?"
+	exit 1
+fi

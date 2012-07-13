@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+#	This command can be run once after unzipping the fip commands.
+#
+echo ""
+echo Before:
+ls -l
+chmod +x fip fipserver new* edit* reg*
+
+echo ""
+echo After:
+ls -l
+exit 0;

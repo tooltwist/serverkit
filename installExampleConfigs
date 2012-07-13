@@ -25,5 +25,11 @@ cp ${dir}/../server/site-conf-example/tooltwist.conf	${dir}/../server/tooltwist.
 cp ${dir}/../server/site-conf-example/web.xml		${dir}/../server/tomcat/webapps/ttsvr/WEB-INF/web.xml
 cp ${dir}/../server/site-conf-example/wbd.conf		${dir}/../server/extension-projects/webdesign/config/wbd/wbd.conf
 
+for n in ${dir}/../server/extension-projects/* ; do
+	tmp=${n}/widgets
+	echo checking ${tmp} exists
+	mkdir -p ${tmp}
+done
+
 echo done
 exit 0

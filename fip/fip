@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+#	Shell script wrapper for Fip, a Java-based installer used to
+#	incrementally install large numbers of files across networks.
+#
+cp="lib/fip.jar"
+for l in lib/commons-*.jar lib/log4*.jar ; do
+	cp=${cp}:${l}
+done
+JAVA_OPTS="-Xms64m -Xmx256m -XX:MaxPermSize=32m"
+exec java ${JAVA_OPTS} -classpath ${cp} tooltwist.fip.Fip $*
+#-v localhost:8080/tmp/fip_src /tmp/fip_dst

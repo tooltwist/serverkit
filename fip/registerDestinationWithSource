@@ -1,0 +1,40 @@
+#!/bin/bash
+#
+#	Add a destination to the list for a source.
+#
+path=$1
+if [ -z ${path} ] ; then
+	echo usage: $0 sourceDirectory
+	exit 1
+fi
+
+if [ ! -d ${path} ] ; then
+	echo Error: Not a directory: ${path}
+	exit 1
+fi
+
+# Check it's not already a source
+cfg=${path}/.fip-source
+if [ ! -e ${cfg} ] ; then
+	echo "Could not find ${cfg}"
+	echo "Perhaps you need to use the 'newSource' command?"
+	exit 1
+fi
+
+# Ask for the string returned by the newDestination command
+str=""
+while [ -z "${str}" ] ; do
+	echo "Please enter the string that was displayed by the newDestination command. It"
+	echo "should look something like:   54FE181-FBD7-4831-9441-724C96FDFA27=passphrase"
+	echo ""
+	echo -n "String? "
+	read str
+done
+
+# Add the string to the end of the source config
+echo ${str} >> ${cfg}
+
+# Finish up
+echo ""
+echo "${cfg} updated."
+exit 0
