@@ -2,12 +2,13 @@
 # Set the Controller variables
 #. /ControllerV8/setParams
 
+
 # Java environment variables
 export JAVA_OPTS="-DtooltwistConfig=/home/widgetti/server/tooltwist.conf -Xms256m -Xmx2g -XX:MaxPermSize=512m"
 
 #Paths
 SERVER=${HOME}/server
-CONTROLLER_BIN=${SERVER}/extension-projects/ttc/config/bin
+CONTROLLER_BIN=${SERVER}/extension-projects/ttc_t/config/bin
 
 
 # Commands for controlling the server
