@@ -9,6 +9,12 @@ for l in lib/*.jar ; do
 	cp=${cp}${sep}${l}
 	sep=":"
 done
+
+# Add lib, so log4j.properties can be found
+cp="lib:${cp}"
+#echo classpath=${cp}
+
+# Run the server
 JAVA_OPTS="-Xms64m -Xmx256m -XX:MaxPermSize=32m"
 exec java $JAVA_OPTS -classpath ${cp} tooltwist.fip.jetty.FipJettyServer $*
 

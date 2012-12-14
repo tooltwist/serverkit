@@ -1,4 +1,5 @@
 MAIN_PROJECT
 TTC_HOME
 FIP_PORT
-nohup.out
+fip/nohup.out
+fip/fipserver.log*
