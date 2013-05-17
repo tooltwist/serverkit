@@ -30,6 +30,11 @@ function runJenkins {
 }
 
 
+#default environment variable for prod/stage servers
+
+. ${HOME}/bin/setenv.sh
+
+
 # Optional nice stuff
 
 set -o vi
