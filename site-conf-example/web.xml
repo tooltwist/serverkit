@@ -1,0 +1,1109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<web-app
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+    metadata-complete="false"
+    version="2.5">
+
+	<display-name>ttStd</display-name>
+
+	<jsp-config>
+      <jsp-property-group>
+        <url-pattern>*.jsp</url-pattern>
+        <trim-directive-whitespaces>true</trim-directive-whitespaces>
+      </jsp-property-group>
+    </jsp-config>
+    
+<!--
+    <servlet>
+  		<servlet-name>WidgetSearchAutocompleteServlet</servlet-name>
+  		<servlet-class>mall.search.WidgetSearchAutocompleteServlet</servlet-class>
+  		<load-on-startup>1</load-on-startup>
+  	</servlet>	
+	<servlet-mapping>
+		<servlet-name>WidgetSearchAutocompleteServlet</servlet-name>
+		<url-pattern>/WidgetSearchAutocompleteServlet</url-pattern>
+	</servlet-mapping>
+-->
+
+	<servlet>
+  		<servlet-name>LoadConfigsServlet</servlet-name>
+  		<servlet-class>tooltwist.misc.LoadConfigsServlet</servlet-class>
+  		<load-on-startup>1</load-on-startup>
+  	</servlet>	
+	<servlet-mapping>
+		<servlet-name>LoadConfigsServlet</servlet-name>
+		<url-pattern>/LoadConfigsServlet</url-pattern>
+	</servlet-mapping>	
+	<servlet>
+		<servlet-name>LoginDirector</servlet-name>
+		<servlet-class>tooltwist.basic.LoginDirector</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginDirector</servlet-name>
+		<url-pattern>/servlet/LoginDirector</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginDirector</servlet-name>
+		<url-pattern>/servlet/tooltwist.basic.LoginDirector</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DisplayDummyAdServlet</servlet-name>
+		<servlet-class>ttStd.ads.DisplayDummyAdServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DisplayDummyAdServlet</servlet-name>
+		<url-pattern>/DisplayDummyAd</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+  		<servlet-name>AdsCacheCleardown</servlet-name>
+  		<servlet-class>ttStd.ads.AdsCacheCleardown</servlet-class>
+  	</servlet>	
+	<servlet-mapping>
+		<servlet-name>AdsCacheCleardown</servlet-name>
+		<url-pattern>/AdsCacheCleardown</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>tooltwist.wbd.DesignerUIM</servlet-name>
+		<servlet-class>tooltwist.wbd.DesignerUIM</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>tooltwist.wbd.DesignerUIM</servlet-name>
+		<url-pattern>/servlet/tooltwist.wbd.DesignerUIM</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>tooltwist.wbd.DesignerUIM</servlet-name>
+		<url-pattern>/designer</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>tooltwist.wbd.ValidateWidgetsUIM</servlet-name>
+		<servlet-class>tooltwist.wbd.ValidateWidgetsUIM</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>tooltwist.wbd.ValidateWidgetsUIM</servlet-name>
+		<url-pattern>/servlet/tooltwist.wbd.ValidateWidgetsUIM</url-pattern>
+	</servlet-mapping>	
+
+	<servlet>
+		<servlet-name>tooltwist.wbd.TestPageUIM</servlet-name>
+		<servlet-class>tooltwist.wbd.TestPageUIM</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>tooltwist.wbd.TestPageUIM</servlet-name>
+		<url-pattern>/servlet/tooltwist.wbd.TestPageUIM</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>tooltwist.wbd.MobileUIM</servlet-name>
+		<servlet-class>tooltwist.wbd.MobileUIM</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>tooltwist.wbd.MobileUIM</servlet-name>
+		<url-pattern>/servlet/tooltwist.wbd.MobileUIM</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ttStd.contact_maintenance.ContactMaintenanceUIM</servlet-name>
+		<servlet-class>ttStd.contact_maintenance.ContactMaintenanceUIM</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ttStd.contact_maintenance.ContactMaintenanceUIM</servlet-name>
+		<url-pattern>/servlet/ttStd.contact_maintenance.ContactMaintenanceUIM</url-pattern>
+	</servlet-mapping>
+
+<servlet>
+	<servlet-name>com.dinaa.util.XpcServlet</servlet-name>
+	<servlet-class>com.dinaa.util.XpcServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.workflow.WorkflowListUIM</servlet-name>
+	<servlet-class>tooltwist.workflow.WorkflowListUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.workflow.WorkflowMaintUIM</servlet-name>
+	<servlet-class>tooltwist.workflow.WorkflowMaintUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.workflow.WorkflowTabUIM</servlet-name>
+	<servlet-class>tooltwist.workflow.WorkflowTabUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.dashboard.DashboardNewUIM</servlet-name>
+	<servlet-class>tooltwist.dashboard.DashboardNewUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.dashboard.DashboardToolUIM</servlet-name>
+	<servlet-class>tooltwist.dashboard.DashboardToolUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.misc.GenericTableEditUIM</servlet-name>
+	<servlet-class>tooltwist.misc.GenericTableEditUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.misc.SimpleReportUIM</servlet-name>
+	<servlet-class>tooltwist.misc.SimpleReportUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.misc.PagenoMaintenanceUIM</servlet-name>
+	<servlet-class>tooltwist.misc.PagenoMaintenanceUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.reports.ReportDisplayUIM</servlet-name>
+	<servlet-class>tooltwist.reports.ReportDisplayUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.reports.ReportMaintUIM</servlet-name>
+	<servlet-class>tooltwist.reports.ReportMaintUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.reports.ReportTemplateMaintUIM</servlet-name>
+	<servlet-class>tooltwist.reports.ReportTemplateMaintUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.scheduler.JobControlUIM</servlet-name>
+	<servlet-class>tooltwist.scheduler.JobControlUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>ttStd.security.UserMaintUIM</servlet-name>
+	<servlet-class>ttStd.security.UserMaintUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.security.AdminPasswordUIM</servlet-name>
+	<servlet-class>tooltwist.security.AdminPasswordUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.security.ChangePasswordUIM</servlet-name>
+	<servlet-class>tooltwist.security.ChangePasswordUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.security.GroupMasterMaintUIM</servlet-name>
+	<servlet-class>tooltwist.security.GroupMasterMaintUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.security.GroupRoleMapMaintUIM</servlet-name>
+	<servlet-class>tooltwist.security.GroupRoleMapMaintUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.security.RoleMenuMapMaintUIM</servlet-name>
+	<servlet-class>tooltwist.security.RoleMenuMapMaintUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.security.UserGroupMapMaintUIM</servlet-name>
+	<servlet-class>tooltwist.security.UserGroupMapMaintUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.security.UserRoleMapMaintUIM</servlet-name>
+	<servlet-class>tooltwist.security.UserRoleMapMaintUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.footprint_queue.QueueMaintenanceUIM</servlet-name>
+	<servlet-class>tooltwist.footprint_queue.QueueMaintenanceUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.footprint_queue.QueueSwitchMaintenanceUIM</servlet-name>
+	<servlet-class>tooltwist.footprint_queue.QueueSwitchMaintenanceUIM</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>tooltwist.workbench.EntityServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.EntityServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.workbench.EntityListServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.EntityListServlet</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>tooltwist.workbench.UimServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.UimServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.workbench.UimListServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.UimListServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.workbench.XpcServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.XpcServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.workbench.XpcListServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.XpcListServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.workbench.XpcFlexServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.XpcFlexServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.workbench.XpcSnapshotListServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.XpcSnapshotListServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.workbench.XpcSnapshotServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.XpcSnapshotServlet</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>tooltwist.workbench.CacheInfoServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.CacheInfoServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.CacheInfoServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.CacheInfoServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>tooltwist.repository.GetTranslationServlet</servlet-name>
+	<servlet-class>tooltwist.repository.GetTranslationServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.repository.GetAllTranslationServlet</servlet-name>
+	<servlet-class>tooltwist.repository.GetAllTranslationServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.repository.FlushServlet</servlet-name>
+	<servlet-class>tooltwist.repository.FlushServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.misc.SelectOptionsServlet</servlet-name>
+	<servlet-class>tooltwist.misc.SelectOptionsServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.misc.SearchRecordServlet</servlet-name>
+	<servlet-class>tooltwist.misc.SearchRecordServlet</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>tooltwist.reports.ReportServlet</servlet-name>
+	<servlet-class>tooltwist.reports.ReportServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.misc.ConfirmFileUploadUIM</servlet-name>
+	<servlet-class>tooltwist.misc.ConfirmFileUploadUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.misc.ShowImageUIM</servlet-name>
+	<servlet-class>tooltwist.misc.ShowImageUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.reports.ChartServlet</servlet-name>
+	<servlet-class>tooltwist.reports.ChartServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>phinza.servicecall.ServiceCallUIM</servlet-name>
+	<servlet-class>phinza.servicecall.ServiceCallUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.rss.RssFeedUIM</servlet-name>
+	<servlet-class>tooltwist.rss.RssFeedUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.search.PopupServlet</servlet-name>
+	<servlet-class>tooltwist.search.PopupServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.misc.TooltwistTableUIM</servlet-name>
+	<servlet-class>tooltwist.misc.TooltwistTableUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.misc.DateUtilityServlet</servlet-name>
+	<servlet-class>tooltwist.misc.DateUtilityServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.misc.CheckSessionServlet</servlet-name>
+	<servlet-class>tooltwist.misc.CheckSessionServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.misc.InstallModuleUIM</servlet-name>
+	<servlet-class>tooltwist.misc.InstallModuleUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.basic.ContinueAfterErrorServlet</servlet-name>
+	<servlet-class>tooltwist.basic.ContinueAfterErrorServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.util.ShowImageServlet</servlet-name>
+	<servlet-class>tooltwist.util.ShowImageServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.reports.ReportXMLDataServlet</servlet-name>
+	<servlet-class>tooltwist.reports.ReportXMLDataServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.search.SearchPopupUIM</servlet-name>
+	<servlet-class>tooltwist.search.SearchPopupUIM</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>tooltwist.workbench.FsaMenuServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.FsaMenuServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.workbench.WorkflowListServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.WorkflowListServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.workbench.WorkflowServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.WorkflowServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.workbench.UpdateSchemaServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.UpdateSchemaServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.misc.JspSelectPageOptionsServlet</servlet-name>
+	<servlet-class>tooltwist.misc.JspSelectPageOptionsServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.util.CheckLinkServlet</servlet-name>
+	<servlet-class>tooltwist.util.CheckLinkServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.misc.DownloadFileServlet</servlet-name>
+	<servlet-class>tooltwist.misc.DownloadFileServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.util.CodeStatusReport</servlet-name>
+	<servlet-class>tooltwist.util.CodeStatusReport</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.workbench.MenuItemListServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.MenuItemListServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.workbench.MenuItemEditServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.MenuItemEditServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.workbench.MenuEditServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.MenuEditServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>ttStd.orgmaint.OrgMaintUIM</servlet-name>
+	<servlet-class>ttStd.orgmaint.OrgMaintUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.workbench.XpcTestServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.XpcTestServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.workbench.MenuListServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.MenuListServlet</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.wbd.JumpToUrlUIM</servlet-name>
+	<servlet-class>tooltwist.wbd.JumpToUrlUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.wbd.FailedGenerationReportUIM</servlet-name>
+	<servlet-class>tooltwist.wbd.FailedGenerationReportUIM</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>tooltwist.wbd.SaveThumbnailUIM</servlet-name>
+	<servlet-class>tooltwist.wbd.SaveThumbnailUIM</servlet-class>
+</servlet>
+
+<servlet>
+	<servlet-name>ttStd.role_maintenance.RoleMaintenanceUIM</servlet-name>
+	<servlet-class>ttStd.role_maintenance.RoleMaintenanceUIM</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>ttStd.role_maintenance.RoleMaintenanceUIM</servlet-name>
+	<url-pattern>/servlet/ttStd.role_maintenance.RoleMaintenanceUIM</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>tooltwist.misc.DownloadFileServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.misc.DownloadFileServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.util.CheckLinkServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.util.CheckLinkServlet</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>tooltwist.misc.JspSelectPageOptionsServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.misc.JspSelectPageOptionsServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.UpdateSchemaServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.UpdateSchemaServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.WorkflowServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.WorkflowServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.WorkflowListServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.WorkflowListServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.FsaMenuServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.FsaMenuServlet</url-pattern>
+</servlet-mapping>
+
+
+<servlet-mapping>
+	<servlet-name>com.dinaa.util.XpcServlet</servlet-name>
+	<url-pattern>/servlet/com.dinaa.util.XpcServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.search.SearchPopupUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.search.SearchPopupUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.reports.ReportXMLDataServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.reports.ReportXMLDataServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.util.ShowImageServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.util.ShowImageServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.basic.ContinueAfterErrorServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.basic.ContinueAfterErrorServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.misc.DateUtilityServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.misc.DateUtilityServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.misc.TooltwistTableUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.misc.TooltwistTableUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.search.PopupServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.search.PopupServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.reports.ChartServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.reports.ChartServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.misc.ShowImageUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.misc.ShowImageUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.misc.ConfirmFileUploadUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.misc.ConfirmFileUploadUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.reports.ReportServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.reports.ReportServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.workflow.WorkflowListUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.workflow.WorkflowListUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.workflow.WorkflowMaintUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.workflow.WorkflowMaintUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.workflow.WorkflowTabUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.workflow.WorkflowTabUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.dashboard.DashboardNewUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.dashboard.DashboardNewUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.dashboard.DashboardToolUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.dashboard.DashboardToolUIM</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>tooltwist.misc.CheckSessionServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.misc.CheckSessionServlet</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>tooltwist.misc.GenericTableEditUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.misc.GenericTableEditUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.misc.SimpleReportUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.misc.SimpleReportUIM</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>tooltwist.misc.InstallModuleUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.misc.InstallModuleUIM</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>tooltwist.misc.PagenoMaintenanceUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.misc.PagenoMaintenanceUIM</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>tooltwist.reports.ReportDisplayUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.reports.ReportDisplayUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.reports.ReportMaintUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.reports.ReportMaintUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.reports.ReportTemplateMaintUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.reports.ReportTemplateMaintUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.scheduler.JobControlUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.scheduler.JobControlUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>ttStd.security.UserMaintUIM</servlet-name>
+	<url-pattern>/servlet/ttStd.security.UserMaintUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.security.AdminPasswordUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.security.AdminPasswordUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.security.ChangePasswordUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.security.ChangePasswordUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.security.GroupMasterMaintUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.security.GroupMasterMaintUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.security.GroupRoleMapMaintUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.security.GroupRoleMapMaintUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.security.RoleMenuMapMaintUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.security.RoleMenuMapMaintUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.security.UserGroupMapMaintUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.security.UserGroupMapMaintUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.security.UserRoleMapMaintUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.security.UserRoleMapMaintUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.footprint_queue.QueueMaintenanceUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.footprint_queue.QueueMaintenanceUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.footprint_queue.QueueSwitchMaintenanceUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.footprint_queue.QueueSwitchMaintenanceUIM</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.EntityServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.EntityServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.EntityListServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.EntityListServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.UimServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.UimServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.UimListServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.UimListServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.XpcServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.XpcServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.XpcListServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.XpcListServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.XpcFlexServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.XpcFlexServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.XpcSnapshotListServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.XpcSnapshotListServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.XpcSnapshotServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.XpcSnapshotServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>tooltwist.basic.LoginServlet</servlet-name>
+	<servlet-class>tooltwist.basic.LoginServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>tooltwist.basic.LoginServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.basic.LoginServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.basic.LoginServlet</servlet-name>
+	<url-pattern>/login</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>tooltwist.basic.MainMenuUIM</servlet-name>
+	<servlet-class>tooltwist.basic.MainMenuUIM</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>tooltwist.basic.MainMenuUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.basic.MainMenuUIM</url-pattern>
+</servlet-mapping>
+
+
+<!-- 
+	Tooltwist workbench servlets
+ -->
+	
+
+<servlet-mapping>
+	<servlet-name>tooltwist.repository.GetTranslationServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.repository.GetTranslationServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.repository.GetAllTranslationServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.repository.GetAllTranslationServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.repository.FlushServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.repository.FlushServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.misc.SelectOptionsServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.misc.SelectOptionsServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.util.CodeStatusReport</servlet-name>
+	<url-pattern>/servlet/tooltwist.util.CodeStatusReport</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.misc.SearchRecordServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.misc.SearchRecordServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.MenuItemListServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.MenuItemListServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.MenuItemEditServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.MenuItemEditServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.MenuEditServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.MenuEditServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>ttStd.orgmaint.OrgMaintUIM</servlet-name>
+	<url-pattern>/servlet/ttStd.orgmaint.OrgMaintUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.XpcTestServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.XpcTestServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.MenuListServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.MenuListServlet</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>tooltwist.workbench.ControlPanelServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.ControlPanelServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.ControlPanelServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.ControlPanelServlet</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>tooltwist.workbench.ParcProjectServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.ParcProjectServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.ParcProjectServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.ParcProjectServlet</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>tooltwist.workbench.PluginListServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.PluginListServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.PluginListServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.PluginListServlet</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>tooltwist.workbench.UserListServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.UserListServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.UserListServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.UserListServlet</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>tooltwist.workbench.UserEditServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.UserEditServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.UserEditServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.UserEditServlet</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>tooltwist.workbench.StringListServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.StringListServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.StringListServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.StringListServlet</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>tooltwist.workbench.SystemInfoServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.SystemInfoServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.SystemInfoServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.SystemInfoServlet</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>tooltwist.workbench.ConfigListServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.ConfigListServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.ConfigListServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.ConfigListServlet</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>tooltwist.workbench.DbConfigServlet</servlet-name>
+	<servlet-class>tooltwist.workbench.DbConfigServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>tooltwist.workbench.DbConfigServlet</servlet-name>
+	<url-pattern>/servlet/tooltwist.workbench.DbConfigServlet</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+	<servlet-name>tooltwist.wbd.JumpToUrlUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.wbd.JumpToUrlUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.wbd.FailedGenerationReportUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.wbd.FailedGenerationReportUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>tooltwist.wbd.SaveThumbnailUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.wbd.SaveThumbnailUIM</url-pattern>
+</servlet-mapping>
+
+
+<!-- 
+	Mappings for the Tooltwist Controller
+ -->
+<servlet>
+    <servlet-name>ControlPanel</servlet-name>
+    <servlet-class>tooltwist.controller.ControlPanel</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>ControlPanel</servlet-name>
+    <url-pattern>/servlet/tooltwist.controller.ControlPanel</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>TtcSetLaunchpadStatusServlet</servlet-name>
+    <servlet-class>tooltwist.controller.TtcSetLaunchpadStatusServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>TtcSetLaunchpadStatusServlet</servlet-name>
+    <url-pattern>/servlet/tooltwist.controller.TtcSetLaunchpadStatusServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>TtcSetLaunchpadStatusServlet</servlet-name>
+    <url-pattern>/TtcSetLaunchpadStatusServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>TtcSiteInstallerServlet</servlet-name>
+    <servlet-class>tooltwist.controller.TtcSiteInstallerServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>TtcSiteInstallerServlet</servlet-name>
+    <url-pattern>/servlet/tooltwist.controller.TtcSiteInstallerServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>TtcSiteInstallerServlet</servlet-name>
+    <url-pattern>/TtcSiteInstallerServlet</url-pattern>
+</servlet-mapping>
+ 
+<servlet>
+	<servlet-name>tooltwist.controller.PayloadConfiguratorUIM</servlet-name> 
+	<servlet-class>tooltwist.controller.PayloadConfiguratorUIM</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>tooltwist.controller.PayloadConfiguratorUIM</servlet-name>
+	<url-pattern>/servlet/tooltwist.controller.PayloadConfiguratorUIM</url-pattern>
+</servlet-mapping>
+   
+<servlet>
+    <servlet-name>RestBundleServlet</servlet-name>
+    <servlet-class>tooltwist.controller.RestBundleServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>RestBundleServlet</servlet-name>
+    <url-pattern>/controller/bundles/*</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>TtControllerUIM</servlet-name>
+    <servlet-class>tooltwist.controller.TtControllerUIM</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>TtControllerUIM</servlet-name>
+    <url-pattern>/servlet/tooltwist.controller.TtControllerUIM</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>TtcSyncServlet</servlet-name>
+    <servlet-class>tooltwist.controller.sync.TtcSyncServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>TtcSyncServlet</servlet-name>
+    <url-pattern>/servlet/tooltwist.controller.sync.TtcSyncServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>tooltwist.wbd.util.GeneratorUIM</servlet-name>
+    <servlet-class>tooltwist.wbd.util.GeneratorUIM</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>tooltwist.wbd.util.GeneratorUIM</servlet-name>
+    <url-pattern>/servlet/tooltwist.wbd.util.GeneratorUIM</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>tooltwist.wbd.util.GeneratorUIM</servlet-name>
+    <url-pattern>/generator</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>RestfulWidgetVersionList</servlet-name>
+    <servlet-class>tooltwist.controller.restful.RestfulWidgetVersionList</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>RestfulWidgetVersionList</servlet-name>
+    <url-pattern>/controller/widgetVersionList/*</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>RestfulGetWidget</servlet-name>
+    <servlet-class>tooltwist.controller.restful.RestfulGetWidget</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>RestfulGetWidget</servlet-name>
+    <url-pattern>/controller/getWidget/*</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>RestfulSubmitWidget</servlet-name>
+    <servlet-class>tooltwist.controller.restful.RestfulSubmitWidget</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>RestfulSubmitWidget</servlet-name>
+    <url-pattern>/controller/submitWidget/*</url-pattern>
+</servlet-mapping>
+
+<!-- 
+ 	Mappings for TEA (Tooltwist e-commerce accelerator)
+ -->
+<servlet>
+    <servlet-name>TeaInterfaceServlet</servlet-name>
+    <servlet-class>tooltwist.tea.TeaInterfaceServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>TeaInterfaceServlet</servlet-name>
+    <url-pattern>/servlet/tooltwist.tea.TeaInterfaceServlet</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>TeaInterfaceServlet</servlet-name>
+    <url-pattern>/tea/products/*</url-pattern>
+</servlet-mapping>
+
+<!-- 
+	Tutuki project 
+ -->
+
+    <servlet>
+        <servlet-name>MiniMapUIM</servlet-name>
+        <servlet-class>com.tutuki.uim.MiniMapUIM</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MiniMapUIM</servlet-name>
+        <url-pattern>/servlet/com.tutuki.uim.MiniMapUIM</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MainMapUIM</servlet-name>
+        <servlet-class>com.tutuki.uim.MainMapUIM</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MainMapUIM</servlet-name>
+        <url-pattern>/servlet/com.tutuki.uim.MainMapUIM</url-pattern>
+    </servlet-mapping>
+
+	<servlet>
+		<servlet-name>tooltwist.wbd.util.SetBrandUIM</servlet-name>
+		<servlet-class>tooltwist.wbd.util.SetBrandUIM</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>tooltwist.wbd.util.SetBrandUIM</servlet-name>
+		<url-pattern>/SetBrand</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>tooltwist.wbd.util.SetBrandUIM</servlet-name>
+		<url-pattern>/servlet/tooltwist.wbd.util.SetBrandUIM</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+  		<servlet-name>SingleLineAddressAutocompleterUIM</servlet-name>
+  		<servlet-class>com.tutuki.uim.SingleLineAddressAutocompleterUIM</servlet-class>
+  		<load-on-startup>1</load-on-startup>
+  	</servlet>	
+	<servlet-mapping>
+		<servlet-name>SingleLineAddressAutocompleterUIM</servlet-name>
+		<url-pattern>/servlet/com.tutuki.uim.SingleLineAddressAutocompleterUIM</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+  		<servlet-name>BoundsCoordsUIM</servlet-name>
+  		<servlet-class>com.tutuki.uim.BoundsCoordsUIM</servlet-class>
+  	</servlet>	
+	<servlet-mapping>
+		<servlet-name>BoundsCoordsUIM</servlet-name>
+		<url-pattern>/servlet/com.tutuki.uim.BoundsCoordsUIM</url-pattern>
+	</servlet-mapping>
+
+
+<!-- 
+	Used by Tooltwist WBD in development and production
+ -->
+  
+    <servlet>
+        <servlet-name>RoutingUIM</servlet-name>
+        <servlet-class>tooltwist.ecommerce.RoutingUIM</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RoutingUIM</servlet-name>
+        <url-pattern>/servlet/tooltwist.ecommerce.RoutingUIM</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RoutingUIM</servlet-name>
+        <url-pattern>/n/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RoutingUIM</servlet-name>
+        <url-pattern>/s/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RoutingUIM</servlet-name>
+        <url-pattern>/p/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RoutingUIM</servlet-name>
+        <url-pattern>/c/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RoutingUIM</servlet-name>
+        <url-pattern>/m/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RoutingUIM</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RoutingUIM</servlet-name>
+        <url-pattern>/MISSING_LINK/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RoutingUIM</servlet-name>
+        <url-pattern>/ERROR_LINK/*</url-pattern>
+    </servlet-mapping>
+
+<!-- 
+	 Used to regenerate sites pages 
+ -->
+
+    <servlet>
+        <servlet-name>tooltwist.wbd.util.WbdSiteGenerator</servlet-name>
+        <servlet-class>tooltwist.wbd.util.WbdSiteGenerator</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>tooltwist.wbd.util.WbdSiteGenerator</servlet-name>
+        <url-pattern>/servlet/tooltwist.wbd.util.WbdSiteGenerator</url-pattern>
+    </servlet-mapping>
+    
+<!-- 
+ Used by WBD at design/development time only     
+ -->
+
+    <servlet>
+        <servlet-name>tooltwist.wbd.WidgetAutocompleterSupportUIM</servlet-name>
+        <servlet-class>tooltwist.wbd.WidgetAutocompleterSupportUIM</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>tooltwist.wbd.WidgetAutocompleterSupportUIM</servlet-name>
+        <url-pattern>/servlet/tooltwist.wbd.WidgetAutocompleterSupportUIM</url-pattern>
+    </servlet-mapping>
+
+<welcome-file-list>
+	<welcome-file>index.html</welcome-file>
+	<welcome-file>index.htm</welcome-file>
+	<welcome-file>index.jsp</welcome-file>
+	<welcome-file>default.html</welcome-file>
+	<welcome-file>default.htm</welcome-file>
+	<welcome-file>default.jsp</welcome-file>
+</welcome-file-list>
+
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Secured Navpoint</web-resource-name>
+			<url-pattern>/n/ssl/*</url-pattern>
+		</web-resource-collection>
+		<web-resource-collection>
+			<web-resource-name>Secured Navpoint</web-resource-name>
+			<url-pattern>/s/ssl/*</url-pattern>
+		</web-resource-collection>
+		<web-resource-collection>
+			<web-resource-name>Secured Navpoint</web-resource-name>
+			<url-pattern>/p/ssl/*</url-pattern>
+		</web-resource-collection>
+		<web-resource-collection>
+			<web-resource-name>Secured Navpoint</web-resource-name>
+			<url-pattern>/c/ssl/*</url-pattern>
+		</web-resource-collection>
+		<web-resource-collection>
+			<web-resource-name>Secured Navpoint</web-resource-name>
+			<url-pattern>/m/ssl/*</url-pattern>
+		</web-resource-collection>	
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+    
+
+
+	<error-page> 
+	    <error-code>404</error-code>
+	    <location>/MISSING_LINK/*</location>
+	</error-page>
+  	<error-page>
+    	<exception-type>java.lang.Throwable</exception-type>
+    	<location>/ERROR_LINK/*</location>
+  	</error-page>
+
+	<!--
+	 - -	Comment this section out if you wish to use environment variable ${tooltwistConfig}
+	  -->
+	<env-entry> 
+	   <env-entry-name>tooltwistConfig</env-entry-name> 
+	   <env-entry-type>java.lang.String</env-entry-type> 
+	   <env-entry-value>/home/controller/server/tooltwist.conf</env-entry-value> 
+	</env-entry>
+</web-app>
