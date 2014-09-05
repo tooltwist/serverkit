@@ -1,19 +1,19 @@
 serverkit  
 =========
 
-This directory contains a skeleton directory structure for a new ToolTwist server.
+This repository contains a skeleton directory structure for a new ToolTwist server.
 
-To install:
+#### Setting up a new server
 
-1. Create a user named tooltwist with a home directory of /home/tooltwist. The default linux command works fine:
+1. Create a user named tooltwist with a home directory of _/home/tooltwist_. The default Linux command works fine:
 
         $ adduser tooltwist
 
-2. Log on as tooltwist
+2. Log on as `tooltwist`
 
-3. Clone this project.
+3. Clone this project (_note the version_).
 
-        $ git clone https://github.com/tooltwist/serverkit.git
+        $ git clone -b v8.3 https://github.com/tooltwist/serverkit.git
 
 3. Move all the files (except this README and 'extras') into $HOME.
 
