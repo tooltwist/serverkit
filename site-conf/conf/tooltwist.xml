@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<config>
+    <!-- This file is read and written by the DataDictionary class -->
+    <!-- mode: eclipse, designer, controller, website --> 
+    <mode>eclipse</mode>
+    <developmentMode>core</developmentMode>
+    <fsaLookAndFeel>style1</fsaLookAndFeel>
+    <useFastXml>Y</useFastXml>
+    <urlDebugMessages>Y</urlDebugMessages>
+    <uiMappingDebugMessages>Y</uiMappingDebugMessages>
+    <unitTestSnippets>N</unitTestSnippets>
+    <footprintDebugMessages>Y</footprintDebugMessages>
+    
+    <coreConfigDir>/home/tooltwist/server/webdesign-projects/config</coreConfigDir>
+    <customConfigDir>/home/tooltwist/server/webdesign-projects/config</customConfigDir>
+    <siteSpecificConfigDir>/home/tooltwist/server/webdesign-projects/config</siteSpecificConfigDir>
+    <pluginConfigDir>/home/tooltwist/server/webdesign-projects/config</pluginConfigDir>
+    <develDir>/home/tooltwist/server/extension-projects</develDir>
+    <binDir>/home/tooltwist/site-conf/bin</binDir>
+
+    <webappsDir>/home/tooltwist/server/tomcat/webapps</webappsDir>
+    <webappPrefix>/ttsvr</webappPrefix>
+	<webdesignProjectsDir>/home/tooltwist/server/webdesign-projects</webdesignProjectsDir>
+	<extensionProjectsDir>/home/tooltwist/server/extension-projects</extensionProjectsDir>
+    <currentWebapp>webdesign</currentWebapp>
+
+	<!-- This is not the real webdesign directory - it is only used to get wbd.conf -->
+	<project>
+		<name>webdesign</name>
+		<type>directory</type>
+		<path>webdesign/config</path>
+	</project>
+
+	<!-- Add the security plugin -->
+	<project>
+	    <name>ttsec-standaloneDesigner</name>
+	    <type>directory</type>
+	    <path>ttsec-standaloneDesigner/config</path>
+	</project>
+
+	<!-- Projects defined by project.json, in the webdesign project -->
+	<project>
+		<name>tooltwist</name>
+		<type>directory</type>
+		<path>tooltwist/config</path>
+	</project>
+	<project>
+		<name>ttWbd</name>
+		<type>directory</type>
+		<path>ttWbd/config</path>
+	</project>
+	<project>
+		<name>ttStd</name>
+		<type>directory</type>
+		<path>ttStd/config</path>
+	</project>
+
+
+    <webapp>
+        <name>webdesign</name>
+<!--
+        <mainProject>guroopro_t</mainProject>
+-->
+        <mainProject>ttdemo</mainProject>
+        <application>webdesign</application>
+        <dbType>mysql</dbType>
+        <jdbcDriver>com.mysql.jdbc.Driver</jdbcDriver>
+        <dbUrl>jdbc:mysql://[[hostname]]:[[port]]/[[dbname]]?useUnicode=true&amp;zeroDateTimeBehavior=convertToNull&amp;jdbcCompliantTruncation=false</dbUrl>
+        <username>root</username>
+        <hostname>localhost</hostname>
+        <port>38089</port>
+<!--
+        <dbname>tooltwist</dbname>
+-->
+        <dbname>guroopro</dbname>
+        <loginUrl>/tooltwist/basic/login.jsp</loginUrl>
+        <logoutUrl>/tooltwist/basic/loggedOut.jsp</logoutUrl>
+        <badLoginUrl>/tooltwist/basic/badLogin.jsp</badLoginUrl>
+        <timeoutUrl>/tooltwist/basic/timeout.jsp</timeoutUrl>
+        <errorUrl>/tooltwist/basic/error.jsp</errorUrl>
+
+		<projectLayer>tooltwist</projectLayer>
+		<projectLayer>ttWbd</projectLayer>
+		<projectLayer>ttStd</projectLayer>
+		<projectLayer>ttsec-standaloneDesigner</projectLayer>
+		<projectLayer>webdesign</projectLayer>
+
+        <defaultUserPreferences>
+        </defaultUserPreferences>
+
+        <config>
+        	<sitename>mySite</sitename>
+			<designPublishDir>/home/tooltwist/server/tomcat/webapps/ttsvr</designPublishDir>
+			<productionPublishDir>/home/tooltwist/server/tomcat/webapps/ttsvr</productionPublishDir>
+			<thumbnailsDir>/home/tooltwist/server/tomcat/webapps/ttsvr/thumbnails</thumbnailsDir>
+			<infoNavpoints>infoblock</infoNavpoints>
+			<designerGenerateDirectory>/home/tooltwist/server/tomcat/webapps/ttsvr</designerGenerateDirectory>
+			<controllerHome>/ControllerV8</controllerHome>
+        </config>
+    </webapp>
+    <user>
+        <name>adm</name>
+        <description>Administrator</description>
+        <password>demosystem</password>
+        <privileges>aXTDFRMU</privileges>
+    </user>
+</config>

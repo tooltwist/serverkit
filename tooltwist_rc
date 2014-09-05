@@ -1,18 +1,10 @@
 
-# Set the Controller variables
-#. /ControllerV8/setParams
-
-
-# Java environment variables
-export JAVA_OPTS="-DtooltwistConfig=/home/widgetti/server/tooltwist.conf -Xms256m -Xmx2g -XX:MaxPermSize=512m"
 
 #Paths
 SERVER=${HOME}/server
-CONTROLLER_BIN=${SERVER}/extension-projects/ttc_t/config/bin
 
 
 # Commands for controlling the server
-
 function start {
         (cd ${SERVER}/tomcat/bin; ./startup.sh)
 }
@@ -21,18 +13,43 @@ function stop {
         (cd ${SERVER}/tomcat/bin; ./shutdown.sh)
 }
 
+# Application log
 function log {
+        tail -f ${HOME}/site-conf/logs/tooltwist.log
+}
+
+# Tomcat log
+function logt {
         tail -f ${SERVER}/tomcat/logs/catalina.out
 }
 
-function runJenkins {
-	${CONTROLLER_BIN}/runJenkins
+# Show java processes
+function psj {
+	ps -ef | grep java | sed G
 }
 
 
-#default environment variable for prod/stage servers
+# Write a nice menu if we're in an interactive session
+# See http://www.linuxjournal.com/content/determine-if-shell-input-coming-terminal-or-pipe
+#stdin="$(ls -l /proc/self/fd/0)"
+#stdin="${stdin/*-> /}"
+#if [[ "$stdin" =~ ^/dev/pts/[0-9] ]]; then
+	echo
+	echo Useful commands:
+	echo ''
+	echo '    start       Start tomcat server'
+	echo '    stop        Stop tomcat server'
+	echo '    log         Show tomcat logfile'
+	echo '    logt        Show tooltwist logfile'
+	echo '    psj         Show java processes'
+	echo ''
+#else
+#    echo Pipe: $stdin
+#fi
 
-. ${HOME}/bin/setenv.sh
+
+# set up additional environment variable for prod/stage servers
+. ${HOME}/site-conf/bin/setenv.sh
 
 
 # Optional nice stuff
@@ -45,5 +62,4 @@ function l { ls -l "$@"; }
 function lr { ls -ltr "$@"; }
 function la { ls -la "$@"; }
 function j { jobs -l "$@"; }
-function launchControl { ${CONTROLLER_BIN}/checkLaunchpad.sh "$@"; }
 

@@ -1,0 +1,27 @@
+<filemap>
+
+	<group>
+		<name>com.tooltwist.home</name>
+		<plugin>com.tooltwist.filemap.FileSystemAdaptor</plugin>
+		<directory>/home/tooltwist/site-conf</directory>
+	</group>
+
+<!--
+	<group>
+		<name>org.trackmotion.myProject</name>
+		<plugin>com.tooltwist.filemap.FileSystemAdaptor</plugin>
+		<directory>/Users/fredsmith/misc/data</directory>
+	</group>
+-->
+
+<!--
+	<group>
+		<name>s3test</name>
+		<plugin>com.tooltwist.filemap.AmazonS3Adaptor</plugin>
+		<accessKey>AAAAAA</accessKey>
+		<secretKey>AAAAAA</secretKey>
+		<bucketName>tr-s3-phil-test</bucketName>
+	</group>
+-->
+	
+</filemap>
