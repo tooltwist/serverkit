@@ -35,9 +35,9 @@ The starting point for these instructions is a [Level 1 Server](https://github.c
 
 5. Got the the tomcat website [http://tomcat.apache.org] and get the URL for downloading, then install as follows:
 
-	$ cd ~/server
+        $ cd ~/server
         $ curl -O http://psg.mtu.edu/pub/apache/tomcat/tomcat-8/v8.0.12/bin/apache-tomcat-8.0.12.tar.gz
-	$ tar xzf apache-tomcat-8.0.12.tar.gz 
+        $ tar xzf apache-tomcat-8.0.12.tar.gz 
         $ mv apache-tomcat-8.0.12 tomcat
         $ rm -rf apache-tomcat-8.0.12.tar.gz tomcat/webapps/[a-qs-z]*
 
@@ -62,13 +62,13 @@ Another advantage is that you can quickly verify the operation of a new server c
 To upgrade to level 3, go to ___some other machine___ with the Tooltwist CLI installed and run:
 
         $ tooltwist init deploy
-	$ tooltwist
+        $ tooltwist
 
 After the deployment is complete, tidy up this new machine:
 
-	$ rm ~/server/.fip-destination
-	$ cp /dev/null ~/logs/tooltwist.log
-	$ cp /dev/null ~/logs/fipserver.log
+        $ rm ~/server/.fip-destination
+        $ cp /dev/null ~/logs/tooltwist.log
+        $ cp /dev/null ~/logs/fipserver.log
 
 Shut down the machine and create a snaphot as a ___Level 3 Image___.
 
