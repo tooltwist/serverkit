@@ -7,7 +7,7 @@ echo ""
 echo Before:
 ls -l@
 xattr -dr com.apple.quarantine .
-chmod +x fip fipserver new* edit* reg*
+chmod +x start_fipserver.sh newFipSourceAndDestination
 
 echo ""
 echo After:

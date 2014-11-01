@@ -5,7 +5,7 @@
 echo ""
 echo Before:
 ls -l
-chmod +x fip fipserver new* edit* reg*
+chmod +x start_fipserver.sh newFipSourceAndDestination
 
 echo ""
 echo After:

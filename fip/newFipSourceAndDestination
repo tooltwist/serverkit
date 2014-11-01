@@ -1,0 +1,46 @@
+#!/bin/bash
+#
+#	Create new .fip-source and .fip-destination files.
+#
+
+# Check it's not already a destination
+dst=.fip-destination
+if [ -e ${dst} ] ; then
+	echo Error: ${dst} already exists
+	exit 1
+fi
+src=.fip-source
+if [ -e ${src} ] ; then
+	echo Error: ${src} already exists
+	exit 1
+fi
+
+# Ask for the passphrase
+passphrase=""
+while [ -z "${passphrase}" ] ; do
+	echo -n "Passphrase? "
+	read passphrase
+done
+
+# Get the new UUIDs
+srcUuid=`uuidgen`
+dstUuid=`uuidgen`
+
+echo Creating ${src}...
+cat > ${src} << ENDSRC
+# Configuration to make this directory a source for FIP (File Installation Protocol)
+sourceUuid=${srcUuid}
+${dstUuid}=${passphrase}
+ENDSRC
+
+# Create the files
+echo Creating ${dst}...
+cat > ${dst} << ENDDST
+# Configuration to make this directory a destination for FIP (File Installation Protocol)
+sourceUuid=${srcUuid}
+destinationUuid=${dstUuid}
+passphrase=${passphrase}
+ENDDST
+
+exit 0
+
