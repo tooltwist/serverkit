@@ -1,20 +1,10 @@
 #!/bin/sh
 #
-#	Shell script wrapper for Fip, a Java-based installer used to
+#	Shell script wrapper for the Fip Server, a Java-based installer used to
 #	incrementally install large numbers of files across networks.
 #
-sep=""
-cp=""
-for l in lib/*.jar ; do
-	cp=${cp}${sep}${l}
-	sep=":"
-done
-
-# Add lib, so log4j.properties can be found
-cp="lib:${cp}"
-#echo classpath=${cp}
 
 # Run the server
-JAVA_OPTS="-Xms64m -Xmx256m -XX:MaxPermSize=32m"
-exec java $JAVA_OPTS -classpath ${cp} tooltwist.fip.jetty.FipJettyServer $*
-
+#JAVA_OPTS="-Xms64m -Xmx256m -XX:MaxPermSize=32m"
+export JAVA_OPTS="${JAVA_OPTS} -Djava.security.egd=file:/dev/urandom"
+java -jar fipserver-1.0.2-shadow.jar -v 39393

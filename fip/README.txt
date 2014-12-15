@@ -3,41 +3,20 @@ for using FIP. In each case, the command is run on the appropriate machine.
 
 Step 1 (only required on OSX machines)
 
-	# sh ./osx_fix_permissions
+	$ sh ./osx_fix_permissions
 
 
-Step 2 - Define the source (only if it's new)
+Step 2 - Define the source and destination config files
 
-	# ./newSource /pathToDirectory
-	Creating /pathToDirectory/.fip-source...
+	$ ./newFipSourceAndDestination
 	
-	Please note the following UUID for this source, which will be used
-	when you create destinations using the newDestination' command:
-	
-		Source UUID: 82F7E1CB-CE86-478C-8399-0879182A87B0B
-	
-	
-Step 3 - Define the destination
+This creates two files:
 
-	# ./newdestination /pathToDirectory
-	Source UUID? E5F7EECB-C886-478C-8399-0874BFA87B0B
-	Passphrase? Hello my friends
-	Creating /pathToDirectory/.fip-destination...
-	
-	Please note the following string, which will be used when adding this
-	destination to the source configuration using 'addDestinationToSource':
-	
-	    3FE98999-3E47-4A9F-B16D-677261DF041A=Hello my friends
+	.fip-source		Copy this file to the source machine, into the directory
+				from which you are installing.
 
-
-Step 4 - Register the destination with the source
-
-	# ./registerDestinationWithSource  /pathToDirectory
-	Please enter the string displayed by the newDestination command. It should
-	look something like:    54FE181-FBD7-4831-9441-724C96FDFA27=passphrase
+	.fip-destination	Copy this file into the destination directory, for
+				example in ~/server.
 	
-	String? 3FE98999-3E47-4A9F-B16D-677261DF041A=Hello my friends
-	
-	/pathToDirectory/.fip-source updated.
-	
-The fip and fipserver commands may then be used to copy files between these directories.
+If you install the same source to multiple destinations, you can edit the .fip-source file
+and add details of the other destinations using information from their .fip-destination files.
