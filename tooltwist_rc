@@ -34,6 +34,7 @@ function psj {
 #stdin="$(ls -l /proc/self/fd/0)"
 #stdin="${stdin/*-> /}"
 #if [[ "$stdin" =~ ^/dev/pts/[0-9] ]]; then
+case $(tty) in /dev/tty[0-9]*)
 	echo
 	echo Useful commands:
 	echo ''
@@ -43,13 +44,14 @@ function psj {
 	echo '    logt        Show tooltwist logfile'
 	echo '    psj         Show java processes'
 	echo ''
+esac
 #else
 #    echo Pipe: $stdin
 #fi
 
 
 # set up additional environment variable for prod/stage servers
-. ${HOME}/site-conf/bin/setenv.sh
+[ -r ${HOME}/site-conf/bin/setenv.sh ] && . ${HOME}/site-conf/bin/setenv.sh
 
 
 # Optional nice stuff
